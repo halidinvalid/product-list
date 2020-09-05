@@ -1,0 +1,12 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+}
+
+dependencies {
+    implementation rootProject.ext.retrofitGsonConverter
+    implementation rootProject.ext.koin
+}

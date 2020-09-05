@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.tech.assignment.product">
+
+    <application>
+        <activity
+            android:name=".ui.ProductActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeProduct" />
+    </application>
+
+</manifest>

@@ -1,0 +1,24 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+    }
+
+}
+
+dependencies {
+    implementation rootProject.ext.picasso
+    implementation rootProject.ext.constraintlayout
+    implementation rootProject.ext.recyclerview
+    implementation rootProject.ext.material
+    implementation rootProject.ext.retrofit
+    implementation rootProject.ext.koin
+    implementation project(':data')
+    implementation project(':domain')
+    implementation project(':presentation')
+}
