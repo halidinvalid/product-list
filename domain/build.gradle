@@ -1,12 +1,15 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android-extensions'
-
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
 }
 
 dependencies {
+    implementation rootProject.ext.roomRuntime
+    annotationProcessor rootProject.ext.roomCompiler
+    kapt rootProject.ext.roomKapt
     implementation rootProject.ext.retrofitGsonConverter
     implementation rootProject.ext.koin
 }

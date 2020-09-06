@@ -24,4 +24,9 @@ ext {
     juniTestImp = 'junit:junit:4.12'
     junitTestExt = 'androidx.test.ext:junit:1.1.1'
     espressotest = 'androidx.test.espresso:espresso-core:3.2.0'
+    roomRuntime = 'androidx.room:room-runtime:2.2.5'
+    roomCompiler = 'androidx.room:room-compiler:2.2.5'
+    roomKapt = 'androidx.room:room-compiler:2.2.5'
+    rxjava = 'io.reactivex.rxjava2:rxjava:2.1.14'
+    rxAndroid = 'io.reactivex.rxjava2:rxandroid:2.0.2'
 }

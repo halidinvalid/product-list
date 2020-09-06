@@ -5,8 +5,12 @@ import com.tech.assignment.domain.model.ProductResponse
 import retrofit2.Response
 
 interface ProductRepository {
-    suspend fun getProducts(): Response<ProductResponse?>
+    suspend fun getProducts(): Response<ProductResponse?>?
 
     suspend fun getProductDetails(productId: String?): Response<ProductItem?>
+
+    suspend fun getProductsCache(): ProductResponse?
+
+    suspend fun getProductDetailsCache(productId: String?): ProductItem?
 
 }

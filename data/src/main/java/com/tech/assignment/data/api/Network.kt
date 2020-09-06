@@ -1,12 +1,13 @@
 package com.tech.assignment.data.api
 
 import com.tech.assignment.data.BuildConfig
-import okhttp3.*
+import okhttp3.Interceptor
+import okhttp3.OkHttpClient
+import okhttp3.Response
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
-import java.io.IOException
 import java.util.concurrent.TimeUnit
 
 
@@ -18,24 +19,14 @@ fun createNetworkClient(baseUrl: String) =
 
 class BasicAuthInterceptor : Interceptor {
 
-    @Throws(IOException::class)
     override fun intercept(chain: Interceptor.Chain): Response {
         val request = chain.request()
         val newUrl =
             request.url().newBuilder().build()
         val newRequest = request.newBuilder().url(newUrl).build()
 
-        return try {
-            chain.proceed(newRequest)
-        } catch (e: IOException) { // custom exception error
-            Response.Builder()
-                .code(1007)
-                .request(chain.request())
-                .protocol(Protocol.HTTP_2)
-                .body(ResponseBody.create(MediaType.parse("{}"), "{}"))
-                .message(e.localizedMessage)
-                .build()
-        }
+        return chain.proceed(newRequest)
+
     }
 }
 
