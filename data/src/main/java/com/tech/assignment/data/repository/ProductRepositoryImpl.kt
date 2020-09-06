@@ -20,7 +20,9 @@ class ProductRepositoryImpl constructor(
     ): Response<ProductResponse?> {
         return if (isOnline(context)) {
             val productsResponse = remoteDataSource.getProducts()
-            localDataSource.updateData(productsResponse.body()?.products!!)
+            productsResponse.body()?.products?.apply {
+                localDataSource.updateData(this)
+            }
             productsResponse
         } else {
             val productListCache = localDataSource.getProductsCache()

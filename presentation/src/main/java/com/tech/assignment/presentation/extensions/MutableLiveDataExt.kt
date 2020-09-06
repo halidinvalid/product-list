@@ -19,7 +19,7 @@ fun <T : Any?> MutableLiveData<DataHolder<T?>>.responseData(responseMethod: Resp
                     DataHolder(responseType = Status.SUCCESSFUL, data = this.body())
                 )
             }
-            this.code() in 400..600 -> {
+            this.code() in 400..600 -> { //http error
                 postValue(
                     DataHolder(
                         responseType = Status.ERROR,
@@ -27,7 +27,7 @@ fun <T : Any?> MutableLiveData<DataHolder<T?>>.responseData(responseMethod: Resp
                     )
                 )
             }
-            this.code() == 3002 -> {
+            this.code() == 3002 -> { // custom error
                 postValue(
                     DataHolder(
                         responseType = Status.ERROR,
@@ -35,7 +35,7 @@ fun <T : Any?> MutableLiveData<DataHolder<T?>>.responseData(responseMethod: Resp
                     )
                 )
             }
-            else -> {
+            else -> { // unknown error
                 postValue(
                     DataHolder(
                         responseType = Status.ERROR,
