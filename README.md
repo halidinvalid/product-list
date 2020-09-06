@@ -6,5 +6,7 @@
 #### -Modularization
 #### -Coroutine
 #### -Retrofit
+#### -Offline Support
+#### -Room
 
 
