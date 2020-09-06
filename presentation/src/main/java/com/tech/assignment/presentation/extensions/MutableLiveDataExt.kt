@@ -19,11 +19,19 @@ fun <T : Any?> MutableLiveData<DataHolder<T?>>.responseData(responseMethod: Resp
                     DataHolder(responseType = Status.SUCCESSFUL, data = this.body())
                 )
             }
-            this.code() == 1007 || this.code() == 404 || this.code() == 403 -> {
+            this.code() in 400..600 -> {
                 postValue(
                     DataHolder(
                         responseType = Status.ERROR,
                         error = Error(message())
+                    )
+                )
+            }
+            this.code() == 3002 -> {
+                postValue(
+                    DataHolder(
+                        responseType = Status.ERROR,
+                        error = Error("No internet connection!")
                     )
                 )
             }

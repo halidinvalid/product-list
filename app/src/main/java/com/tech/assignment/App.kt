@@ -13,7 +13,7 @@ class App : Application() {
     }
 
     private fun loadKoin() {
-        val appModules = appViewModelModule + appDomainModule + appDataModule
+        val appModules = appDataModule + appDomainModule + appViewModelModule
         startKoin(
             this,
             appModules

@@ -7,7 +7,7 @@ import org.koin.dsl.module.module
 val productViewModelModules = module {
     viewModel {
         ProductViewModel(
-            productInteractor = get(PRODUCT_INTERACTOR)
+            get()
         )
     }
 }

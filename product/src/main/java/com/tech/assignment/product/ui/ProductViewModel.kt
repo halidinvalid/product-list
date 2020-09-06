@@ -11,7 +11,7 @@ import com.tech.assignment.presentation.extensions.launchViewModelScope
 import com.tech.assignment.presentation.extensions.loadingData
 import com.tech.assignment.presentation.extensions.responseData
 
-class ProductViewModel(
+public class ProductViewModel(
     private val productInteractor: ProductInteractor
 ) : BaseViewModel() {
 
