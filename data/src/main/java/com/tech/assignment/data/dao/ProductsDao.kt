@@ -16,7 +16,7 @@ interface ProductsDao {
     }
 
     @Insert
-    fun insertAll(users: List<ProductItem?>)
+    fun insertAll(products: List<ProductItem?>)
 
     @Query("DELETE FROM ProductsTable")
     fun deleteAll()
