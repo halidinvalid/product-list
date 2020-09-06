@@ -16,8 +16,17 @@ dependencies {
     implementation rootProject.ext.constraintlayout
     implementation rootProject.ext.recyclerview
     implementation rootProject.ext.material
-    implementation rootProject.ext.retrofit
     implementation rootProject.ext.koin
+    implementation rootProject.ext.retrofitGsonConverter
+    implementation rootProject.ext.retrofitLoggingInterceptors
+    implementation rootProject.ext.retrofitRxJava2Adapter
+    implementation rootProject.ext.coroutines
+    implementation rootProject.ext.retrofit
+
+    testImplementation rootProject.ext.juniTestImp
+    androidTestImplementation rootProject.ext.junitTestExt
+    androidTestImplementation rootProject.ext.espressotest
+
     implementation project(':data')
     implementation project(':domain')
     implementation project(':presentation')
