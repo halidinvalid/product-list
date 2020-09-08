@@ -1,9 +1,9 @@
 package com.tech.assignment.data.di
 
 import android.content.Context
-import com.tech.assignment.data.datasource.LocalDataSource
-import com.tech.assignment.data.datasource.RemoteDataSource
 import com.tech.assignment.data.repository.ProductRepositoryImpl
+import com.tech.assignment.domain.datasource.LocalDataSource
+import com.tech.assignment.domain.datasource.RemoteDataSource
 import com.tech.assignment.domain.repositories.ProductRepository
 import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module.module

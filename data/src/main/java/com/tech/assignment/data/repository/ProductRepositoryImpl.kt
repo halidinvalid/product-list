@@ -1,9 +1,9 @@
 package com.tech.assignment.data.repository
 
 import android.content.Context
-import com.tech.assignment.data.datasource.LocalDataSource
-import com.tech.assignment.data.datasource.RemoteDataSource
 import com.tech.assignment.data.extensions.isOnline
+import com.tech.assignment.domain.datasource.LocalDataSource
+import com.tech.assignment.domain.datasource.RemoteDataSource
 import com.tech.assignment.domain.model.ProductItem
 import com.tech.assignment.domain.model.ProductResponse
 import com.tech.assignment.domain.repositories.ProductRepository
